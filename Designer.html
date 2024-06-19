@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Designer.css">
+    <title>FlatBar Bracing Designer</title>
+</head>
+<body>
+    <script src="Designer.js"></script>
+    <div class="UserInputs">
+        <div class = "Header">
+            <h1>Design Data</h1>
+        </div>
+        <div class = "Inputs">
+            <form>
+                <p id = "Row">
+                  <label for="tensionLoad">Tension Load:</label>
+                  <input id="tensionLoad" type="number">
+                  <label>kN</label>
+                </p>
+
+                <p>
+                  <label for="plateWidth">Plate Width:</label>
+                  <input id="plateWidth" type="number">
+                  <label>mm</label>
+                </p>
+
+                <p>
+                    <label for="plateThickness">Plate Thickness:</label>
+                    <input id="plateThickness" type="number">
+                    <label>mm</label>
+                </p>
+
+                <p>
+                    <label for="plateYieldStrength">Plate Yield Strength:</label>
+                    <input id="plateYieldStrength" type="number">
+                    <label>N/mm<sup>2</sup></label>
+                </p>
+
+                <p>
+                    <label for="preferredBolt">Preferred Bolt Diameter:</label>
+                    <input id="preferredBolt" type="number">
+                    <label>mm</label>
+                </p>
+                <p>
+                    <label for="boltGrade">Bolt Grade:</label>
+                    <input id="boltGrade" type="number">
+                </p>
+              </form>
+              <button onclick="submitForm()">Calculate</button>
+
+
+        </div>
+    </div>
+</body>
+</html>
