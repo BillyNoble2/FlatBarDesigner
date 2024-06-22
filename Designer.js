@@ -40,6 +40,9 @@ function submitForm(){
 
     var tensionResistance = calculateTensionResistance(netArea, fu);
     console.log("TensionResistance = " + tensionResistance)
+
+    var acceptable = determineAcceptable(tensionLoad, tensionResistance);
+    console.log("Acceptable = " + acceptable)
 }
 
 function calculateNumberBolts(tensionLoad, boltDiameter, boltGrade){
@@ -204,4 +207,13 @@ function calculateTensionResistance(netArea, fu){
     //BS EN 1993-1-1 CL 6.2.3
     var gammaM2 = 1.1;
     return ((0.9 * netArea * fu) / gammaM2) / 1000
+}
+
+function determineAcceptable(tensionLoad, tensionResistance){
+    if(tensionLoad <= tensionResistance){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
