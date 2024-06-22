@@ -43,6 +43,8 @@ function submitForm(){
 
     var acceptable = determineAcceptable(tensionLoad, tensionResistance);
     console.log("Acceptable = " + acceptable)
+
+    displayResults(tensionLoad, netArea, tensionResistance);
 }
 
 function calculateNumberBolts(tensionLoad, boltDiameter, boltGrade){
@@ -206,7 +208,9 @@ function determinePlateFu(plateThickness, plateGrade) {
 function calculateTensionResistance(netArea, fu){
     //BS EN 1993-1-1 CL 6.2.3
     var gammaM2 = 1.1;
-    return ((0.9 * netArea * fu) / gammaM2) / 1000
+    let resistance = ((0.9 * netArea * fu) / gammaM2) / 1000
+    resistance = resistance.toFixed(1);
+    return resistance
 }
 
 function determineAcceptable(tensionLoad, tensionResistance){
@@ -216,4 +220,15 @@ function determineAcceptable(tensionLoad, tensionResistance){
     else{
         return false;
     }
+}
+
+function displayResults(tensionLoad, netArea, tensionResistance){
+    //Display tension load.
+    document.getElementById("TensionLoad").innerText = "Tension load = " + tensionLoad + " kN";
+
+    //Display net area at bolt holes.
+    document.getElementById("NetArea").innerHTML = `Net area at bolt holes = ${netArea} mm<sup>2</sup>`;
+
+    //Display tension resistance at bolt holes.
+    document.getElementById("TensionResistanceHoles").innerText = `Tension resistance at bolt holes = ${tensionResistance} kN`;
 }
