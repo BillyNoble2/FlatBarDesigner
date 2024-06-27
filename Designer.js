@@ -221,14 +221,11 @@ function determineAcceptable(tensionLoad, tensionResistance){
         return false;
     }
 }
-
+//This was for the old result inline text, needs updated to display the table.
 function displayResults(tensionLoad, netArea, tensionResistance){
     //Display tension load.
-    document.getElementById("TensionLoad").innerText = "Tension load = " + tensionLoad + " kN";
-
-    //Display net area at bolt holes.
-    document.getElementById("NetArea").innerHTML = `Net area at bolt holes = ${netArea} mm<sup>2</sup>`;
-
+    document.getElementById("ShearResVal").innerText = tensionLoad + " kN";
+    
     //Display tension resistance at bolt holes.
     document.getElementById("TensionResistanceHoles").innerText = `Tension resistance at bolt holes = ${tensionResistance} kN`;
 }

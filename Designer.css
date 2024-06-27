@@ -30,3 +30,6 @@ button{
 button:hover {
     background-color: lightgray;
   }
+tr:hover{
+    background-color: #D6EEEE;
+}
