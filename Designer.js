@@ -252,6 +252,6 @@ function displayResults(tensionLoad, netArea, tensionResistance, boltShearResTot
     document.getElementById("ShearResAcceptable").innerText = determineAcceptable(tensionLoad, tensionResistance);
     
     //Display total bolt shear resistance.
-    document.getElementById("BoltShearResVal").innerText = boltShearResTotal + " kN"
+    document.getElementById("BoltShearResVal").innerText = Math.round(boltShearResTotal,1) + " kN"
     document.getElementById("BoltShearResAcceptable").innerText = determineAcceptable(boltShearResTotal, tensionLoad);
 }

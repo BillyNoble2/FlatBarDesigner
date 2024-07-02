@@ -8,72 +8,101 @@
 </head>
 <body>
     <script src="Designer.js"></script>
-    <div class="UserInputs">
-        <div class = "Header">
-            <h1>FlatBar Bracing Connection Designer</h1>
-            <h2>Design Data</h2>
+    <div class="container">
+        <div class="UserInputs">
+            <div class="sectionHeader">
+                <h2>Design Data</h2>
+            </div>
+            <div class="Inputs">
+                <form>
+                    <p id="Row">
+                        <label for="tensionLoad">Tension Load:</label>
+                        <input id="tensionLoad" type="number">
+                        <label>kN</label>
+                    </p>
+                    <p>
+                        <label for="plateWidth">Plate Width:</label>
+                        <input id="plateWidth" type="number">
+                        <label>mm</label>
+                    </p>
+                    <p>
+                        <label for="plateThickness">Plate Thickness:</label>
+                        <input id="plateThickness" type="number">
+                        <label>mm</label>
+                    </p>
+                    <p>
+                        <label for="plateGrade">Plate Grade S:</label>
+                        <input id="plateGrade" type="number">
+                    </p>
+                    <p>
+                        <label for="preferredBolt">Preferred Bolt Diameter:</label>
+                        <input id="preferredBolt" type="number">
+                        <label>mm</label>
+                    </p>
+                    <p>
+                        <label for="boltGrade">Bolt Grade:</label>
+                        <input id="boltGrade" type="number">
+                    </p>
+                </form>
+                <button onclick="submitForm()">Calculate</button>
+            </div>
         </div>
-        <div class = "Inputs">
-            <form>
-                <p id = "Row">
-                  <label for="tensionLoad">Tension Load:</label>
-                  <input id="tensionLoad" type="number">
-                  <label>kN</label>
-                </p>
-
-                <p>
-                  <label for="plateWidth">Plate Width:</label>
-                  <input id="plateWidth" type="number">
-                  <label>mm</label>
-                </p>
-
-                <p>
-                    <label for="plateThickness">Plate Thickness:</label>
-                    <input id="plateThickness" type="number">
-                    <label>mm</label>
-                </p>
-
-                <p>
-                    <label for="plateGrade">Plate Grade S:</label>
-                    <input id="plateGrade" type="number">
-                </p>
-
-                <p>
-                    <label for="preferredBolt">Preferred Bolt Diameter:</label>
-                    <input id="preferredBolt" type="number">
-                    <label>mm</label>
-                </p>
-                <p>
-                    <label for="boltGrade">Bolt Grade:</label>
-                    <input id="boltGrade" type="number">
-                </p>
-              </form>
-              <button onclick="submitForm()">Calculate</button>
-
-
+        <div class="ResultsSection">
+            <div class="ResultsTable">
+                <div class="sectionHeader">
+                    <h2>Results Summary</h2>
+                </div>
+                <table>
+                    <tr>
+                        <th>Check</th>
+                        <th>Value</th>
+                        <th>Acceptable?</th>
+                    </tr>
+                    <tr>
+                        <td>Tension Resistance at Bolt Holes</td>
+                        <td id="ShearResVal"></td>
+                        <td id="ShearResAcceptable"></td>
+                    </tr>
+                    <tr>
+                        <td>Bolt Shear Resistance</td>
+                        <td id="BoltShearResVal"></td>
+                        <td id="BoltShearResAcceptable"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="AdditionalInfo">
+                <h2>Connection Geometry</h2>
+                <div class="splitContainer">
+                    <div class="textSection">
+                        <table>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>20mm</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>30mm</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>40mm</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>50mm</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="imageSection">
+                        <img src="img/optionB.png" alt="Relevant Image" />
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class = "ResultsTable">
-        <h2>
-            Results Summary
-        </h2>
-        <table>
-            <tr>
-                <th>Check</th>
-                <th>Value</th>
-                <th>Acceptable?</th>
-            </tr>
-            <tr>
-                <td>Tension Resistance at Bolt Holes</td>
-                <td id = "ShearResVal"></td>
-                <td id = "ShearResAcceptable"></td>
-            </tr>
-            <tr>
-                <td>Bolt Shear Resistance</td>
-                <td id = "BoltShearResVal"></td>
-                <td id = "BoltShearResAcceptable"></td>
-            </tr>
-        </table>
     </div>
 </body>
 </html>
