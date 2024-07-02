@@ -35,6 +35,9 @@ function submitForm(){
     var netArea = calculateNetArea(plateWidth, plateThickness, boltsPerRow, boltHoleDia);
     console.log("NetArea = " + netArea);
 
+    var boltShearResTotal = calculateBoltShearRes(boltDiameter, numberBolts);
+    console.log("BoltRes = " + boltShearResTotal)
+
     var fu = determinePlateFu(plateThickness, plateGrade);
     console.log("PlateUltimateTensileResistance = " + fu)
 
@@ -44,7 +47,26 @@ function submitForm(){
     var acceptable = determineAcceptable(tensionLoad, tensionResistance);
     console.log("Acceptable = " + acceptable)
 
-    displayResults(tensionLoad, netArea, tensionResistance);
+    displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal);
+}
+
+function calculateBoltShearRes(boltDiameter, numberBolts){
+    switch(boltDiameter){
+        case '20':
+            boltShearRes = 94.1;
+            break;
+        case '24':
+            boltShearRes = 136;
+            break;
+        case '30':
+            boltShearRes = 215;
+            break;
+        default:
+            console.error('Unsupported bolt diameter:', boltDiameter)
+            boltShearRes = null;
+    }
+    var totalShearRes = (boltShearRes * numberBolts)
+    return totalShearRes;
 }
 
 function calculateNumberBolts(tensionLoad, boltDiameter, boltGrade){
@@ -213,19 +235,23 @@ function calculateTensionResistance(netArea, fu){
     return resistance
 }
 
-function determineAcceptable(tensionLoad, tensionResistance){
-    if(tensionLoad <= tensionResistance){
+function determineAcceptable(result, designVal ){
+    if(designVal <= result){
         return true;
     }
     else{
         return false;
     }
 }
+
 //This was for the old result inline text, needs updated to display the table.
-function displayResults(tensionLoad, netArea, tensionResistance){
+function displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal){
     //Display tension load.
-    document.getElementById("ShearResVal").innerText = tensionLoad + " kN";
+    document.getElementById("ShearResVal").innerText = tensionResistance + " kN";
+    //Display true if design resistance > design value
+    document.getElementById("ShearResAcceptable").innerText = determineAcceptable(tensionLoad, tensionResistance);
     
-    //Display tension resistance at bolt holes.
-    document.getElementById("TensionResistanceHoles").innerText = `Tension resistance at bolt holes = ${tensionResistance} kN`;
+    //Display total bolt shear resistance.
+    document.getElementById("BoltShearResVal").innerText = boltShearResTotal + " kN"
+    document.getElementById("BoltShearResAcceptable").innerText = determineAcceptable(boltShearResTotal, tensionLoad);
 }

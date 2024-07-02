@@ -33,3 +33,22 @@ button:hover {
 tr:hover{
     background-color: #D6EEEE;
 }
+h2{
+    text-decoration: underline;
+}
+table{
+    padding-top: 10px;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+th {
+    border: 2px solid #000; /* Thicker outline for headers */
+}
+td {
+    border: 1px solid #000; /* Lighter outline for cells */
+    width: 250px;
+}
+
