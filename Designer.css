@@ -39,9 +39,13 @@ label, input {
 }
 
 button {
-    width: 100%;
+    width: 60%;
     height: 50px;
     margin-top: 10px;
+    font-size: larger;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
 }
 
 .ResultsTable table {
