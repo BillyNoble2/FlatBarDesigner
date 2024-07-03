@@ -47,7 +47,7 @@ function submitForm(){
     var acceptable = determineAcceptable(tensionLoad, tensionResistance);
     console.log("Acceptable = " + acceptable)
 
-    displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal);
+    displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal, boltsPerRow, numberBolts);
 }
 
 function calculateBoltShearRes(boltDiameter, numberBolts){
@@ -88,6 +88,11 @@ function calculateNumberBolts(tensionLoad, boltDiameter, boltGrade){
     }
     let numberBolts = tensionLoad / boltShearRes;
     numberBolts = Math.ceil(numberBolts);
+
+    if(numberBolts % 2 != 0 && numberBolts % 3 != 0){
+        numberBolts = numberBolts + 1
+    }
+
     return numberBolts;
 }
 
@@ -244,14 +249,38 @@ function determineAcceptable(result, designVal ){
     }
 }
 
-//This was for the old result inline text, needs updated to display the table.
-function displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal){
+function displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal, boltsPerRow, numberBolts){
+    // Determine if checks are acceptable
+    var shearResAcceptable = determineAcceptable(tensionResistance, tensionLoad);
+    var boltShearAcceptable = determineAcceptable(boltShearResTotal, tensionLoad);
+    const listOfResults = [
+        shearResAcceptable,
+        boltShearAcceptable
+    ];
+
+    var totalAcceptable;
+    //Check if any of the checks have failed.
+    if(listOfResults.includes(false)){
+        totalAcceptable = false;
+    }
+    else{
+        totalAcceptable = true;
+    }
+
+
     //Display tension load.
     document.getElementById("ShearResVal").innerText = tensionResistance + " kN";
     //Display true if design resistance > design value
-    document.getElementById("ShearResAcceptable").innerText = determineAcceptable(tensionLoad, tensionResistance);
+    document.getElementById("ShearResAcceptable").innerText = shearResAcceptable;
     
     //Display total bolt shear resistance.
     document.getElementById("BoltShearResVal").innerText = Math.round(boltShearResTotal,1) + " kN"
-    document.getElementById("BoltShearResAcceptable").innerText = determineAcceptable(boltShearResTotal, tensionLoad);
+    document.getElementById("BoltShearResAcceptable").innerText = boltShearAcceptable;
+
+    document.getElementById("OverallAcceptable").innerText = totalAcceptable;
+
+
+    //MAKE THIS INTO OWN METHOD.
+    document.getElementById("BoltsTotalDia").innerText = numberBolts;
+    document.getElementById("BoltsPerRowDia").innerText = boltsPerRow;
 }

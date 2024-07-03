@@ -8,7 +8,7 @@
 </head>
 <body>
     <script src="Designer.js"></script>
-    <div class="container">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/shim.min.js" integrity="sha512-nPnkC29R0sikt0ieZaAkk28Ib7Y1Dz7IqePgELH30NnSi1DzG4x+envJAOHz8ZSAveLXAHTR3ai2E9DZUsT8pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <div class="container">
         <div class="UserInputs">
             <div class="sectionHeader">
                 <h2>Design Data</h2>
@@ -68,6 +68,11 @@
                         <td id="BoltShearResVal"></td>
                         <td id="BoltShearResAcceptable"></td>
                     </tr>
+                    <tr>
+                        <td>Overall Acceptable?</td>
+                        <td></td>
+                        <td id = "OverallAcceptable"></td>
+                    </tr>
                 </table>
             </div>
             <div class="AdditionalInfo">
@@ -94,6 +99,14 @@
                             <tr>
                                 <td>D</td>
                                 <td>50mm</td>
+                            </tr>
+                            <tr>
+                                <td>Bolts (Total)</td>
+                                <td id = "BoltsTotalDia">4</td>
+                            </tr>
+                            <tr>
+                                <td>Bolts/Row</td>
+                                <td id = "BoltsPerRowDia">2</td>
                             </tr>
                         </table>
                     </div>
