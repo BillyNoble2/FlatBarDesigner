@@ -43,3 +43,37 @@ function calculateDimB(boltDiameter, boltsPerRow, plateWidth){
     let boltCC = availableBoltWidth / boltSpaces
     return boltCC
 }
+
+function calculateDimC(boltDiameter){
+    switch(boltDiameter){
+        case '20':
+            return 40;
+        case '24':
+            return 50;
+        case '30':
+            return 60;
+    }
+}
+
+function calculateDimD(boltsPerRow, numberBolts, boltDiameter){
+    if(numberBolts > boltsPerRow){
+        var multipleRows = true;
+    }
+    else{
+        var multipleRows = false;
+    }
+
+    if(multipleRows = true){
+        switch(boltDiameter){
+            case '20':
+                return '60mm';
+            case '24':
+                return '70mm';
+            case '30':
+                return '90mm';
+        }
+    }
+    else{
+        return "N/A"
+    }
+}

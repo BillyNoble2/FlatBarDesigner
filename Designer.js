@@ -49,9 +49,11 @@ function submitForm(){
 
     var dimA = calculateDimA(boltDiameter)
     var dimB = calculateDimB(boltDiameter, boltsPerRow, plateWidth)
+    var dimC = calculateDimC(boltDiameter)
+    var dimD = calculateDimD(boltsPerRow, numberBolts, boltDiameter)
 
     displayResults(tensionLoad, netArea, tensionResistance, boltShearResTotal, boltsPerRow, numberBolts);
-    displayDimData(numberBolts, boltsPerRow, dimA, dimB);
+    displayDimData(numberBolts, boltsPerRow, dimA, dimB, dimC, dimD);
 }
 
 function calculateBoltShearRes(boltDiameter, numberBolts){
@@ -284,10 +286,12 @@ function displayResults(tensionLoad, netArea, tensionResistance, boltShearResTot
     document.getElementById("OverallAcceptable").innerText = totalAcceptable;    
 }
 
-function displayDimData(numberBolts, boltsPerRow, dimA, dimB){
+function displayDimData(numberBolts, boltsPerRow, dimA, dimB, dimC, dimD){
 
     document.getElementById("DimA").innerText = dimA + "mm";
     document.getElementById("DimB").innerText = dimB + "mm";
+    document.getElementById("DimC").innerText = dimC + "mm";
+    document.getElementById("DimD").innerText = dimD
     document.getElementById("BoltsTotalDia").innerText = numberBolts;
     document.getElementById("BoltsPerRowDia").innerText = boltsPerRow;
     
