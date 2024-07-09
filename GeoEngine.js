@@ -58,9 +58,25 @@ function calculateDimC(boltDiameter){
 function calculateDimD(boltsPerRow, numberBolts, boltDiameter){
     if(numberBolts > boltsPerRow){
         var multipleRows = true;
+        if(boltsPerRow > 2){
+            const resultImage = document.getElementById("resultImage")
+            resultImage.src = 'img/optionC.png'
+        }
+        else{
+            const resultImage = document.getElementById("resultImage")
+            resultImage.src = 'img/optionB.png'
+        }
     }
     else{
         var multipleRows = false;
+        if(boltsPerRow > 2){
+            const resultImage = document.getElementById("resultImage")
+            resultImage.src = 'img/optionD.png'
+        }
+        else{
+            const resultImage = document.getElementById("resultImage")
+            resultImage.src = 'img/optionA.png'
+        }
     }
 
     if(multipleRows = true){
@@ -75,5 +91,14 @@ function calculateDimD(boltsPerRow, numberBolts, boltDiameter){
     }
     else{
         return "N/A"
+    }
+}
+
+function imageSelector(boltsPerRow){
+    const resultImage = document.getElementById("resultImage")
+
+    
+    if(boltsPerRow = 2){
+        resultImage.src = 'img/optionA.png'
     }
 }
