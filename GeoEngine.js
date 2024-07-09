@@ -1,9 +1,3 @@
-test();
-
-function test(){
-    calculateDimB('20', 2, '200')
-}
-
 function calculateDimA(boltDiameter){    
     switch(boltDiameter){
         case '20':
