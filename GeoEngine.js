@@ -87,12 +87,3 @@ function calculateDimD(boltsPerRow, numberBolts, boltDiameter){
         return "N/A"
     }
 }
-
-function imageSelector(boltsPerRow){
-    const resultImage = document.getElementById("resultImage")
-
-    
-    if(boltsPerRow = 2){
-        resultImage.src = 'img/optionA.png'
-    }
-}
