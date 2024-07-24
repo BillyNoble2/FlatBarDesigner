@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <title>Firebase Login</title>
+    <link rel="stylesheet" href="Index.css">
+        
 
-    <title>Designer</title>
 </head>
 <body>
-    <a href = "Designer.html">FLATBAR</a>
-    <script src="index.js"></script>
-
-    <div>
-        <form>
-            <p id="Row">
-                <label for="userName">Username:</label>
-                <input id="userName" type="text">
-            </p>
-            <p id = "Row"> 
-                <label for="password">Password:</label>
-                <input id="password" type="password">
-            </p>
-            <p id = "ButtonRow">
-                <button id="submitLogIn">Log In</button>
-            </p>
-        </form>
+    <script src = "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"></script>
+    <script type = "module" src = "SignIn.js" defer></script>
+    <div class="container">
+        <h1>StructuralAssistant</h1>
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <button id="loginButton">Login</button>
+        </div>
+        <a>Forgotten your password?</a>
     </div>
 </body>
 </html>
