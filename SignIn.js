@@ -33,9 +33,13 @@ document.getElementById("loginButton").addEventListener('click', e => {
       // Signed in 
       const user = userCredential.user;
       console.log("Signed in successfully:", user);
-      window.location.href = 'Designer.html';
+      window.location.href = 'MainMenu.html';
     })
     .catch((error) => {
+      alert('Incorrect login details!')
       console.log("Error signing in:", error.message);
+      
     });
 });
+
+
