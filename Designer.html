@@ -9,6 +9,8 @@
 <body>
     <script src="Designer.js"></script>
     <script src="GeoEngine.js"></script>
+    <script src = "Json.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/shim.min.js" integrity="sha512-nPnkC29R0sikt0ieZaAkk28Ib7Y1Dz7IqePgELH30NnSi1DzG4x+envJAOHz8ZSAveLXAHTR3ai2E9DZUsT8pQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <div class="container">
         <div class="UserInputs">
@@ -46,7 +48,7 @@
                         <input id="boltGrade" type="number">
                     </p>
                 </form>
-                <button onclick="submitForm()">Calculate</button>
+                <button id = "CalculateButton" onclick="submitForm()">Calculate</button>
             </div>
         </div>
         <div class="ResultsSection">
