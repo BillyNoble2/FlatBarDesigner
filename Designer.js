@@ -18,7 +18,8 @@ async function submitForm(){
             Width: plateWidth,
             Thickness: plateThickness,
             BoltDiameter: boltDiameter,
-            PlateGrade: plateGrade
+            PlateGrade: plateGrade,
+            BoltGrade: boltGrade
         })
     });
 
