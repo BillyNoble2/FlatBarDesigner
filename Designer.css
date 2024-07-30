@@ -33,9 +33,14 @@ p {
     display: table-row;
 }
 
-label, input {
+label, input, select {
     display: table-cell;
     padding: 5px;
+}
+
+.form-control {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width */
 }
 
 button {
@@ -98,4 +103,3 @@ button {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-
