@@ -25,4 +25,26 @@ async function submitForm(){
 
     const result = await response.json();
     console.log(result)
+    BuildResponse(result)
 }
+
+
+
+function BuildResponse(result) {
+    try {
+        console.log("Raw JSON string:", result); // Log the raw JSON string
+        
+        // Attempt to parse the JSON string
+        var response = JSON.parse(result);
+        
+        console.log("Parsed response:", response); // Log the parsed response
+
+        // Access the properties
+        console.log(response.response.grossArea); // Outputs: 4000
+        console.log(response.response.boltHoleDiameter); // Outputs: 22
+        // Add more properties as needed
+    } catch (e) {
+        console.error("Failed to parse JSON:", e.message);
+    }
+}
+
