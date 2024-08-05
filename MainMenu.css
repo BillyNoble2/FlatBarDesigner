@@ -24,7 +24,7 @@ button {
 button:hover {
     background-color: brown;
 }
-#bracingConnections, #beamConnections, #columnConnections {
+#bracingConnections, #beamConnections, #columnConnections, #beamDesign, #columnDesign {
     border: 2px solid black; /* Adjust the width, style, and color of the border as needed */
     padding: 10px; /* Optional: Adds some space inside the border */
     margin: 20px; /* Optional: Adds some space outside the border */

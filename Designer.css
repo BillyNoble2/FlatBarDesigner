@@ -5,6 +5,7 @@ body {
 
 .container {
     display: flex;
+    width: 1200px;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
@@ -53,19 +54,19 @@ button {
     color: white;
 }
 
-.ResultsTable table {
+.ResultsTable table, .AdditionalInfo table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.ResultsTable th, .ResultsTable td {
+.ResultsTable th, .ResultsTable td, .AdditionalInfo th, .AdditionalInfo td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
 }
 
-.ResultsTable th {
+.ResultsTable th, .AdditionalInfo th {
     border: 2px solid #000;
     background-color: #f2f2f2;
 }
