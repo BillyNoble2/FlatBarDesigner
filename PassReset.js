@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
@@ -24,22 +23,16 @@ const analytics = getAnalytics(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-document.getElementById("loginButton").addEventListener('click', e => {
-  const email = document.getElementById("email").value;
-  const pass = document.getElementById("password").value;
-
-  signInWithEmailAndPassword(auth, email, pass)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      console.log("Signed in successfully:", user);
-      window.location.href = 'MainMenu.html';
+document.getElementById("sendResetButton").addEventListener('click', e =>{
+    const email = document.getElementById("email").value;
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert('Password reset email sent, please check your inbox.')
     })
     .catch((error) => {
-      alert('Incorrect login details!')
-      console.log("Error signing in:", error.message);
-      
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage)
+      // ..
     });
-});
-
-
+  })

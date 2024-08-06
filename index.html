@@ -23,7 +23,22 @@
         <div class="form-group">
             <button id="loginButton">Login</button>
         </div>
-        <a>Forgotten your password?</a>
+        <div class="form-group">
+            <button id="navRegisterButton" onClick = "Register.html">Register for an account</button>
+            <script type="text/javascript">
+                document.getElementById("navRegisterButton").onclick = function () {
+                    location.href = "Register.html";
+                };
+            </script>
+        </div>
+        <div class="form-group-alt">
+            <button id="fgtPassButton">Forgotten your password?</button>
+            <script type="text/javascript">
+                document.getElementById("fgtPassButton").onclick = function () {
+                    location.href = "PassReset.html";
+                };
+            </script>
+        </div>
     </div>
 </body>
 </html>

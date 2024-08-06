@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "index.css">
+</head>
+<body>
+    <script src = "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+    <script src = "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"></script>
+    <script type = "module" src = "PassReset.js" defer></script>
+    <div class="container">
+        <h1>StructuralAssistant</h1>
+        <h2>Password Reset</h2>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <button id="sendResetButton">Send reset email</button>
+        </div>
+    </div>
+</body>
+</html>

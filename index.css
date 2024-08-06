@@ -46,6 +46,19 @@ a{
     cursor: pointer;
     font-size: larger;
 }
+.form-group-alt button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: larger;
+}
+.form-group-alt button:hover {
+    background-color: brown;
+}
 .form-group button:hover {
     background-color: brown;
 }
