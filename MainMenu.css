@@ -3,32 +3,40 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: burlywood;
+    background-color: #9ed5ff;  
+    overflow: hidden;
+    font-family: "Titillium Web", sans-serif;
+
 }
 #header{
     text-align: center;
     font-size: 36px;
-    text-decoration: underline;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 button {
     width: 33%;
     padding: 0.75rem;
-    background-color: orange;
+    background-color: #004275;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: larger;
     margin-top: 10px;
+    font-family: "Titillium Web", sans-serif;
+
 }
 button:hover {
-    background-color: brown;
+    background-color: #002642;
 }
 #bracingConnections, #beamConnections, #columnConnections, #beamDesign, #columnDesign {
     border: 2px solid black; /* Adjust the width, style, and color of the border as needed */
     padding: 10px; /* Optional: Adds some space inside the border */
     margin: 20px; /* Optional: Adds some space outside the border */
     border-radius: 5px; /* Optional: Rounds the corners of the border */
+    background-color: white;
 }
 h2{
     margin-top: 0px;
