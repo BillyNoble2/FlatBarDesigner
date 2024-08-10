@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="GableColumnDesigner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Gable Column Designer</title>
+</head>
+<body>
+    <div id = "Header">
+        <h1>Gable Column Designer</h1>
+        <h3>Design of gable columns subject to axial and bending.</h3>
+    </div>
+    <div class="UserInputs">
+        <div class="sectionHeader">
+            <h2>Design Data</h2>
+        </div>
+        <div class="Inputs">
+            <form>
+                <p id="Row">
+                    <label for="columnHeight">Column Height:</label>
+                    <input id="columnHeight" type="number" class="form-control">
+                    <label>mm</label>
+                </p>
+                <p id="Row">
+                    <label for="columnCentres">Column Centres:</label>
+                    <input id="columnCentres" type="number" class="form-control">
+                    <label>mm</label>
+                </p>
+                <p id="Row">
+                    <label for="frameCentres">Frame Centres:</label>
+                    <input id="frameCentres" type="number" class="form-control">
+                    <label>mm</label>
+                </p>
+                <p id="Row">
+                    <label for="deadLoadFactor">Dead Load Factor:</label>
+                    <input id="deadLoadFactor" type="number" class="form-control">
+                </p>
+                <p id="Row">
+                    <label for="liveLoadFactor">Live Load Factor:</label>
+                    <input id="liveLoadFactor" type="number" class="form-control">
+                </p>
+                <p id="Row">
+                    <label for="windLoadFactor">Wind Load Factor:</label>
+                    <input id="windLoadFactor" type="number" class="form-control">
+                </p>
+                <p id="Row">
+                    <label for="positiveWindPressure">Positive Wind Pressure:</label>
+                    <input id="positiveWindPressure" type="number" class="form-control">
+                    <label>kN/m<sup>2</sup></label>
+                </p>
+                <p id="Row">
+                    <label for="negativeWindSuction">Negative Wind Suction:</label>
+                    <input id="negativeWindSuction" type="number" class="form-control">
+                    <label>kN/m<sup>2</sup></label>
+                </p>
+                <p id="Row">
+                    <label for="roofDeadLoad">Roof Dead Load:</label>
+                    <input id="roofDeadLoad" type="number" class="form-control">
+                    <label>kN/m<sup>2</sup></label>
+                </p>
+                <p id="Row">
+                    <label for="roofServiceLoad">Roof Service Load:</label>
+                    <input id="roofServiceLoad" type="number" class="form-control">
+                    <label>kN/m<sup>2</sup></label>
+                </p>
+                <p id="Row">
+                    <label for="roofImposedLoad">Roof Imposed Load:</label>
+                    <input id="roofImposedLoad" type="number" class="form-control">
+                    <label>kN/m<sup>2</sup></label>
+                </p>
+                <p id="Row">
+                    <label for="deflectionLimit">Deflection Limit (Span / value):</label>
+                    <input id="deflectionLimit" type="number" class="form-control">
+                </p>
+            
+            </form>
+            <button id="CalculateButton" onclick="submitForm()">Calculate</button>
+        </div>
+    </div>
+</body>
+</html>
